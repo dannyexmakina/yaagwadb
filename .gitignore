@@ -1,0 +1,24 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+.vscode/
+*.swp
+*~
+
+# Go
+*.exe
+*.test
+*.out
+coverage.*
+vendor/
+
+# Env
+.env
+.env.*
+
+.task
+build/*
+.claude

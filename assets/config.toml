@@ -1,0 +1,51 @@
+data_directory = "/var/lib/yaagwadb"
+database_file_name = "yaagwa.db"
+socket = "/run/yaagwadb/daemon.sock"
+log_level = "info"
+
+[object_storage]
+kind = ""
+bucket = ""
+prefix = ""
+region = ""
+endpoint = ""
+
+[daemon]
+file_data_delete_workers = 2
+object_storage_write_workers = 8
+scheduler_tick = "10s"
+physical_delete_interval = "10s"
+index_archive_interval = "15m"
+finished_task_cleanup_interval = "1h"
+logical_delete_grace_period = "24h"
+failed_task_retry_interval = "1h"
+finished_task_retention = "24h"
+worker_idle_wait = "1m"
+worker_error_wait = "1s"
+running_task_recovery_interval = "10m"
+running_task_timeout = "1h"
+database_busy_timeout = "5s"
+query_timeout = "10s"
+query_row_limit = 1000
+
+[retry.file_data_delete]
+base = "1s"
+cap = "1m"
+max_attempts = 10
+max_duration = "1h"
+
+[retry.object_storage_write]
+base = "1s"
+cap = "10m"
+max_attempts = 20
+max_duration = "6h"
+
+[mount]
+point = ""
+debug = false
+allow_other = true
+
+[hrana]
+listen = "127.0.0.1:8080"
+file_data_size_limit = 1048576
+file_mode = 0o644

@@ -1,0 +1,33 @@
+version: "3"
+
+vars:
+  BINARY: yaagwadb
+  BUILD_DIR: "{{.TASKFILE_DIR}}/build"
+
+tasks:
+  default:
+    cmds:
+      - task --list-all -t {{.TASKFILE}}
+    silent: true
+
+  build:
+    desc: ホスト向けにビルドする
+    dir: "{{.TASKFILE_DIR}}"
+    cmds:
+      - go build -o {{.BUILD_DIR}}/{{.BINARY}} ./cmd
+
+  build:linux:
+    desc: Linux（amd64・arm64）向けにビルドする
+    dir: "{{.TASKFILE_DIR}}"
+    env:
+      GOOS: linux
+      CGO_ENABLED: "0"
+    cmds:
+      - for: [amd64, arm64]
+        cmd: GOARCH={{.ITEM}} go build -o {{.BUILD_DIR}}/linux/{{.ITEM}}/{{.BINARY}} ./cmd
+
+  test:
+    desc: go test を実行する（-- の後にオプションを指定可能）
+    dir: "{{.TASKFILE_DIR}}"
+    cmds:
+      - go test ./... {{.CLI_ARGS}}

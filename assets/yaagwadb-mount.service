@@ -1,0 +1,15 @@
+[Unit]
+Description=YaagwaDB FUSE mount
+Requires=yaagwadb.service
+After=yaagwadb.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/yaagwadb -c /etc/yaagwadb/config.toml mount
+KillSignal=SIGTERM
+TimeoutStopSec=30s
+Restart=on-failure
+RestartSec=2s
+
+[Install]
+WantedBy=multi-user.target

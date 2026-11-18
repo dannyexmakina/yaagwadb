@@ -1,0 +1,27 @@
+[Unit]
+Description=YaagwaDB SQL front (Hrana over HTTP)
+Requires=yaagwadb.service
+After=yaagwadb.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/yaagwadb -c /etc/yaagwadb/config.toml hrana
+User=yaagwadb
+Group=yaagwadb
+KillSignal=SIGTERM
+TimeoutStopSec=30s
+Restart=on-failure
+RestartSec=2s
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+
+[Install]
+WantedBy=multi-user.target

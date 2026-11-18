@@ -76,6 +76,8 @@ Each of the following commands specifies the configuration file with `-c <file>`
   - Running under systemd
 - [docs/en/errors.md](docs/en/errors.md)
   - Errors and how to fix them
+- [yaagwadb-test](https://github.com/dannyexmakina/yaagwadb-test)
+  - Development environment and tests
 
 ## 日本語
 
@@ -151,3 +153,5 @@ systemd の内容については [docs/ja/systemd.md](docs/ja/systemd.md) を参
   - systemd での運用
 - [docs/ja/errors.md](docs/ja/errors.md)
   - エラーと対処
+- [yaagwadb-test](https://github.com/dannyexmakina/yaagwadb-test)
+  - 開発環境とテスト

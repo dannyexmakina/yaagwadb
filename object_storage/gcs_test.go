@@ -16,7 +16,7 @@ const (
 	// googleCloudStorageTestUnsetEndpoint means no endpoint is set.
 	googleCloudStorageTestUnsetEndpoint = ""
 	// googleCloudStorageTestSkipMessage is the skip reason when no endpoint is set.
-	googleCloudStorageTestSkipMessage = "set YAAGWADB_GCS_ENDPOINT (see file-db-test develop/compose.yaml)"
+	googleCloudStorageTestSkipMessage = "set YAAGWADB_GCS_ENDPOINT (see yaagwadb-test develop/compose.yaml)"
 	// googleCloudStorageTestEmulatorVariable is the environment variable that points the client library at the emulator.
 	googleCloudStorageTestEmulatorVariable = "STORAGE_EMULATOR_HOST"
 	// googleCloudStorageTestProject is the project for creating buckets (arbitrary on the emulator).

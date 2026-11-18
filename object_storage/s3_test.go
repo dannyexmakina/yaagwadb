@@ -18,10 +18,10 @@ const (
 	// s3TestUnsetEndpoint means no endpoint is set.
 	s3TestUnsetEndpoint = ""
 	// s3TestSkipMessage is the skip reason when no endpoint is set.
-	s3TestSkipMessage = "set YAAGWADB_S3_ENDPOINT (see file-db-test develop/compose.yaml)"
+	s3TestSkipMessage = "set YAAGWADB_S3_ENDPOINT (see yaagwadb-test develop/compose.yaml)"
 	// s3TestRegion is the signing region (arbitrary on the compatible container).
 	s3TestRegion = "us-east-1"
-	// s3TestAccessKey and s3TestSecretKey are the credentials set on the file-db-test develop/compose.yaml container.
+	// s3TestAccessKey and s3TestSecretKey are the credentials set on the yaagwadb-test develop/compose.yaml container.
 	s3TestAccessKey = "yaagwadb"
 	s3TestSecretKey = "yaagwadb-secret"
 	// s3TestNoSessionToken means no temporary credentials are used.
